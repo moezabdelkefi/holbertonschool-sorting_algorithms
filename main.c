@@ -12,9 +12,9 @@ int main(void)
 	{
 		printf("error\n");
 		return (1);
-		fprintf(fp, "O(n)\n");
-		fprintf(fp, "O(n^2)\n");
-		fprintf(fp, "O(n ^ 2)\n");
+		printf("O(n)\n");
+		printf("O(n^2)\n");
+		printf("O(n^2)\n");
 
 		fclose(fp);
 		return (0);
