@@ -12,9 +12,9 @@ int main(void)
 	{
 		printf("error\n");
 		return (1);
-		fprintf(fp, "in the best case\n");
-		fprintf(fp, "in the average case\n");
-		fprintf(fp, "in the worst case\n");
+		fprintf(fp, "O(n)\n");
+		fprintf(fp, "O(n^2)\n");
+		fprintf(fp, "O(n ^ 2)\n");
 
 		fclose(fp);
 		return (0);
