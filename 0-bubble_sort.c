@@ -12,13 +12,16 @@ void bubble_sort(int *array, size_t size)
 
 	for (i = 0; i < size - i - 1; i++)
 	{
-		if (array[j] > array[j + 1])
+		for (j = 0; j < size - i - 1; j++)
 		{
-			temp = array[j];
-			array[j] = array[j + 1];
-			array[j + 1] = temp;
-			print_array(array, size);
-			printf("\n");
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+				print_array(array, size);
+				printf("\n");
+			}
 		}
 	}
 }
