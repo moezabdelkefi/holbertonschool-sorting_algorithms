@@ -1,43 +1,43 @@
 #include "sort.h"
 /**
  *insertion_sort_list - a function that sorts a doubly linked list of integers
- *@list: variable of doubly linked list
+ *@list: head of the node
  *Return: non
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr = *list;
+
+	listint_t *new = *list;
 	listint_t *prev = NULL;
 	listint_t *next = NULL;
-
-	while (curr != NULL)
+	while (new != NULL)
 	{
-		next = curr->next;
-		prev = curr->prev;
+		next = new->next;
+		prev = new->prev;
 
-		while (prev != NULL && prev->n > curr->n)
+		while (prev != NULL && prev->n > new->n)
 		{
 
 			if (prev->prev != NULL)
 			{
-				prev->prev->next = curr;
+				prev->prev->next = new;
 			}
-			curr->prev = prev->prev;
-			prev->next = curr->next;
-			if (curr->next != NULL)
+			new->prev = prev->prev;
+			prev->next = new->next;
+			if (new->next != NULL)
 			{
-				curr->next->prev = prev;
+				new->next->prev = prev;
 			}
-			curr->next = prev;
-			prev->prev = curr;
+			new->next = prev;
+			prev->prev = new;
 
-			if (curr->prev == NULL)
+			if (new->prev == NULL)
 			{
-				*list = curr;
+				*list = new;
 			}
-			prev = curr->prev;
+			prev = new->prev;
 			print_list(*list);
 		}
-		curr = next;
+		new = next;
 	}
 }
